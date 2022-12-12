@@ -11,7 +11,8 @@
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "laravel/ui": "^3.4"
+        "laravel/ui": "^3.4",
+        "sentry/sentry-laravel": "^3.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12",
@@ -43,7 +44,6 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi",
-            "@php artisan ide-helper:models -W"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
