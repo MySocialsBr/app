@@ -48,6 +48,12 @@
       <!-- translation-button-->
       <ul class="dropdown-content" id="translation-dropdown">
         <li class="dropdown-item">
+          <a class="grey-text text-darken-1" href="{{url('lang/pt-BR')}}" data-language="pt-BR">
+            <i class="flag-icon flag-icon-br"></i>
+            Português
+          </a>
+        </li>
+        <li class="dropdown-item">
           <a class="grey-text text-darken-1" href="{{url('lang/en')}}" data-language="en">
             <i class="flag-icon flag-icon-gb"></i>
             English
