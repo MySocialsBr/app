@@ -1,4 +1,5 @@
-<?php // Code within app\Helpers\Helper.php
+<?php
+// Code within app\Helpers\Helper.php
 
 namespace App\Helpers;
 
@@ -24,7 +25,7 @@ class Helpers
             'isFooterDark' => null,
             'isFooterFixed' => false,
             'templateTitle' => '',
-            'defaultLanguage'=>'en',
+            'defaultLanguage' => 'en',
             'largeScreenLogo' => 'images/logo/materialize-logo-color.png',
             'smallScreenLogo' => 'images/logo/materialize-logo.png',
             'direction' => env('MIX_CONTENT_DIRECTION', 'ltr'),
@@ -35,17 +36,27 @@ class Helpers
 
         // all available option of materialize template
         $allOptions = [
-            'mainLayoutType' => array('vertical-modern-menu', 'vertical-menu-nav-dark', 'vertical-gradient-menu', 'vertical-dark-menu', 'horizontal-menu'),
+            'mainLayoutType' => array(
+                'vertical-modern-menu',
+                'vertical-menu-nav-dark',
+                'vertical-gradient-menu',
+                'vertical-dark-menu',
+                'horizontal-menu'
+            ),
             'pageHeader' => array(true, false),
             'navbarLarge' => array(true, false),
             'isNavbarDark' => array(null, true, false),
             'isNavbarFixed' => array(true, false),
             'isMenuDark' => array(null, true, false),
             'isMenuCollapsed' => array(true, false),
-            'activeMenuType' => array('sidenav-active-rounded'=>'sidenav-active-rounded','sidenav-active-square'=>'sidenav-active-square', 'sidenav-active-fullwidth'=>'sidenav-active-fullwidth'),
+            'activeMenuType' => array(
+                'sidenav-active-rounded' => 'sidenav-active-rounded',
+                'sidenav-active-square' => 'sidenav-active-square',
+                'sidenav-active-fullwidth' => 'sidenav-active-fullwidth'
+            ),
             'isFooterDark' => array(null, true, false),
             'isFooterFixed' => array(false, true),
-            'defaultLanguage'=>array('en'=>'en','fr'=>'fr','de'=>'de','pt'=>'pt'),
+            'defaultLanguage' => array('en' => 'en', 'fr' => 'fr', 'de' => 'de', 'pt' => 'pt'),
             'direction' => array('ltr', 'rtl'),
         ];
 
@@ -180,17 +191,18 @@ class Helpers
             'templateTitle' => $data['templateTitle'],
             'largeScreenLogo' => $data['largeScreenLogo'],
             'smallScreenLogo' => $data['smallScreenLogo'],
-            'defaultLanguage'=>$allOptions['defaultLanguage'][$data['defaultLanguage']],
+            'defaultLanguage' => $allOptions['defaultLanguage'][$data['defaultLanguage']],
             'mainFooterClass' => $mainFooterClass[$data['mainLayoutType']],
             'mainFooterColor' => $mainFooterColor[$data['mainLayoutType']],
             'direction' => $data['direction'],
         ];
-         // set default language if session hasn't locale value the set default language
-         if(!session()->has('locale')){
+        // set default language if session hasn't locale value the set default language
+        if (! session()->has('locale')) {
             app()->setLocale($layoutClasses['defaultLanguage']);
         }
         return $layoutClasses;
     }
+
     // updatesPageConfig function override all configuration of custom.php file as page requirements.
     public static function updatePageConfig($pageConfigs)
     {
