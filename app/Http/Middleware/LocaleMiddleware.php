@@ -18,6 +18,7 @@ class LocaleMiddleware
     {
         // available language in template array
         $availLocale = [
+            'pt-BR'=>'pt-BR',
             'en' => 'en',
             'fr' => 'fr',
             'de' => 'de',

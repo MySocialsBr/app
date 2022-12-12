@@ -9,7 +9,8 @@ class LanguageController extends Controller
     // set locale in session
     public function swap($locale){
         // available language in template array
-        $availLocale = [ 
+        $availLocale = [
+            'pt-BR'=>'pt-BR',
             'en'=>'en',
             'fr'=>'fr',
             'de'=>'de',

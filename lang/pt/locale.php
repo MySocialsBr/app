@@ -134,4 +134,3 @@ return[
     "Child 2"=> "Criança 2",
     "Page Collapse"=> "Recolher página"
 ];
-?>
