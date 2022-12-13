@@ -5,20 +5,25 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0.2",
+        "php": "^8.2",
         "fruitcake/laravel-cors": "^3.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "laravel/ui": "^3.4"
+        "laravel/ui": "^3.4",
+        "sentry/sentry-laravel": "^3.1"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.12",
         "fakerphp/faker": "^1.9.1",
+        "friendsofphp/php-cs-fixer": "^3.13",
         "laravel/sail": "^1.0.1",
         "lucascudo/laravel-pt-br-localization": "^1.2",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
+        "nunomaduro/larastan": "^2.0",
+        "nunomaduro/phpinsights": "^2.6",
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0"
     },
@@ -29,7 +34,8 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
-            "app/Helpers/Helpers.php"
+            "app/Helpers/Helpers.php",
+            "app/helpers.php"
         ]
     },
     "autoload-dev": {
@@ -43,13 +49,45 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:meta"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "test": [
+            "vendor/bin/phpunit"
+        ],
+        "style:fix": [
+            "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --config .php-cs-fixer.php"
+        ],
+        "style:check": [
+            "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --config .php-cs-fixer.php --diff --verbose --dry-run --stop-on-violation"
+        ],
+        "phpstan": [
+            "./vendor/bin/phpstan analyse --memory-limit 512M"
+        ],
+        "phpinsights": [
+            "php artisan insights -n"
+        ],
+        "fix-phpinsights": [
+            "php artisan insights --fix -n"
+        ],
+        "pipes": [
+            "composer update",
+            "composer dump",
+            "php artisan ide-helper:generate",
+            "php artisan ide-helper:meta",
+            "composer fix-phpinsights",
+            "composer style:fix",
+            "composer phpstan",
+            "composer phpinsights",
+            "composer style:check",
+            "composer test"
         ]
     },
     "extra": {
@@ -60,7 +98,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": false
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

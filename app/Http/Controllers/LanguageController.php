@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
+
 class LanguageController extends Controller
 {
     // set locale in session
-    public function swap($locale)
+    public function swap(string $locale): RedirectResponse
     {
         // available language in template array
         $availLocale = [
