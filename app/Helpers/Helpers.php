@@ -42,7 +42,7 @@ class Helpers
                 'vertical-menu-nav-dark',
                 'vertical-gradient-menu',
                 'vertical-dark-menu',
-                'horizontal-menu'
+                'horizontal-menu',
             ],
             'pageHeader' => [true, false],
             'navbarLarge' => [true, false],
@@ -53,7 +53,7 @@ class Helpers
             'activeMenuType' => [
                 'sidenav-active-rounded' => 'sidenav-active-rounded',
                 'sidenav-active-square' => 'sidenav-active-square',
-                'sidenav-active-fullwidth' => 'sidenav-active-fullwidth'
+                'sidenav-active-fullwidth' => 'sidenav-active-fullwidth',
             ],
             'isFooterDark' => [null, true, false],
             'isFooterFixed' => [false, true],

@@ -26,7 +26,7 @@ class ForgotPasswordController extends Controller
         $pageConfigs = ['bodyCustomClass' => 'forgot-bg', 'isCustomizer' => false];
 
         return view('/auth/passwords/email', [
-            'pageConfigs' => $pageConfigs
+            'pageConfigs' => $pageConfigs,
         ]);
     }
 }

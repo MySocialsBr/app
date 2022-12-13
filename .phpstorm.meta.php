@@ -3,16 +3,14 @@
 
 namespace PHPSTORM_META {
 
-    /**
-     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-     *
-     * @author Barry vd. Heuvel <barryvdh@gmail.com>
-     * @see    https://github.com/barryvdh/laravel-ide-helper
-     */
-    override(
-        new \Illuminate\Contracts\Container\Container,
-        map([
-            '' => '@',
+   /**
+    * PhpStorm Meta file, to provide autocomplete information for PhpStorm
+    *
+    * @author Barry vd. Heuvel <barryvdh@gmail.com>
+    * @see https://github.com/barryvdh/laravel-ide-helper
+    */
+    override(new \Illuminate\Contracts\Container\Container, map([
+        '' => '@',
             'Fruitcake\Cors\CorsService' => \Fruitcake\Cors\CorsService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
@@ -137,6 +135,7 @@ namespace PHPSTORM_META {
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+            'NunoMaduro\PhpInsights\Domain\Contracts\Repositories\FilesRepository' => \NunoMaduro\PhpInsights\Infrastructure\Repositories\LocalFilesRepository::class,
             'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
             'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
             'Sentry\ClientBuilderInterface' => \Sentry\ClientBuilder::class,
@@ -161,6 +160,7 @@ namespace PHPSTORM_META {
             'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
             'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
             'cache' => \Illuminate\Cache\CacheManager::class,
+            'cache.psr6' => \Symfony\Component\Cache\Adapter\Psr16Adapter::class,
             'cache.store' => \Illuminate\Cache\Repository::class,
             'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
             'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -207,12 +207,9 @@ namespace PHPSTORM_META {
             'view' => \Illuminate\View\Factory::class,
             'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
             'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ])
-    );
-    override(
-        \Illuminate\Container\Container::makeWith(0),
-        map([
-            '' => '@',
+        ]));
+    override(\Illuminate\Container\Container::makeWith(0), map([
+        '' => '@',
             'Fruitcake\Cors\CorsService' => \Fruitcake\Cors\CorsService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
@@ -337,6 +334,7 @@ namespace PHPSTORM_META {
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+            'NunoMaduro\PhpInsights\Domain\Contracts\Repositories\FilesRepository' => \NunoMaduro\PhpInsights\Infrastructure\Repositories\LocalFilesRepository::class,
             'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
             'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
             'Sentry\ClientBuilderInterface' => \Sentry\ClientBuilder::class,
@@ -361,6 +359,7 @@ namespace PHPSTORM_META {
             'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
             'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
             'cache' => \Illuminate\Cache\CacheManager::class,
+            'cache.psr6' => \Symfony\Component\Cache\Adapter\Psr16Adapter::class,
             'cache.store' => \Illuminate\Cache\Repository::class,
             'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
             'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -407,12 +406,9 @@ namespace PHPSTORM_META {
             'view' => \Illuminate\View\Factory::class,
             'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
             'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ])
-    );
-    override(
-        \Illuminate\Contracts\Container\Container::get(0),
-        map([
-            '' => '@',
+        ]));
+    override(\Illuminate\Contracts\Container\Container::get(0), map([
+        '' => '@',
             'Fruitcake\Cors\CorsService' => \Fruitcake\Cors\CorsService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
@@ -537,6 +533,7 @@ namespace PHPSTORM_META {
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+            'NunoMaduro\PhpInsights\Domain\Contracts\Repositories\FilesRepository' => \NunoMaduro\PhpInsights\Infrastructure\Repositories\LocalFilesRepository::class,
             'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
             'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
             'Sentry\ClientBuilderInterface' => \Sentry\ClientBuilder::class,
@@ -561,6 +558,7 @@ namespace PHPSTORM_META {
             'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
             'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
             'cache' => \Illuminate\Cache\CacheManager::class,
+            'cache.psr6' => \Symfony\Component\Cache\Adapter\Psr16Adapter::class,
             'cache.store' => \Illuminate\Cache\Repository::class,
             'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
             'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -607,12 +605,9 @@ namespace PHPSTORM_META {
             'view' => \Illuminate\View\Factory::class,
             'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
             'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ])
-    );
-    override(
-        \Illuminate\Contracts\Container\Container::make(0),
-        map([
-            '' => '@',
+        ]));
+    override(\Illuminate\Contracts\Container\Container::make(0), map([
+        '' => '@',
             'Fruitcake\Cors\CorsService' => \Fruitcake\Cors\CorsService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
@@ -737,6 +732,7 @@ namespace PHPSTORM_META {
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+            'NunoMaduro\PhpInsights\Domain\Contracts\Repositories\FilesRepository' => \NunoMaduro\PhpInsights\Infrastructure\Repositories\LocalFilesRepository::class,
             'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
             'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
             'Sentry\ClientBuilderInterface' => \Sentry\ClientBuilder::class,
@@ -761,6 +757,7 @@ namespace PHPSTORM_META {
             'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
             'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
             'cache' => \Illuminate\Cache\CacheManager::class,
+            'cache.psr6' => \Symfony\Component\Cache\Adapter\Psr16Adapter::class,
             'cache.store' => \Illuminate\Cache\Repository::class,
             'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
             'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -807,12 +804,9 @@ namespace PHPSTORM_META {
             'view' => \Illuminate\View\Factory::class,
             'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
             'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ])
-    );
-    override(
-        \Illuminate\Contracts\Container\Container::makeWith(0),
-        map([
-            '' => '@',
+        ]));
+    override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
+        '' => '@',
             'Fruitcake\Cors\CorsService' => \Fruitcake\Cors\CorsService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
@@ -937,6 +931,7 @@ namespace PHPSTORM_META {
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+            'NunoMaduro\PhpInsights\Domain\Contracts\Repositories\FilesRepository' => \NunoMaduro\PhpInsights\Infrastructure\Repositories\LocalFilesRepository::class,
             'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
             'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
             'Sentry\ClientBuilderInterface' => \Sentry\ClientBuilder::class,
@@ -961,6 +956,7 @@ namespace PHPSTORM_META {
             'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
             'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
             'cache' => \Illuminate\Cache\CacheManager::class,
+            'cache.psr6' => \Symfony\Component\Cache\Adapter\Psr16Adapter::class,
             'cache.store' => \Illuminate\Cache\Repository::class,
             'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
             'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -1007,12 +1003,9 @@ namespace PHPSTORM_META {
             'view' => \Illuminate\View\Factory::class,
             'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
             'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ])
-    );
-    override(
-        \App::get(0),
-        map([
-            '' => '@',
+        ]));
+    override(\App::get(0), map([
+        '' => '@',
             'Fruitcake\Cors\CorsService' => \Fruitcake\Cors\CorsService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
@@ -1137,6 +1130,7 @@ namespace PHPSTORM_META {
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+            'NunoMaduro\PhpInsights\Domain\Contracts\Repositories\FilesRepository' => \NunoMaduro\PhpInsights\Infrastructure\Repositories\LocalFilesRepository::class,
             'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
             'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
             'Sentry\ClientBuilderInterface' => \Sentry\ClientBuilder::class,
@@ -1161,6 +1155,7 @@ namespace PHPSTORM_META {
             'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
             'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
             'cache' => \Illuminate\Cache\CacheManager::class,
+            'cache.psr6' => \Symfony\Component\Cache\Adapter\Psr16Adapter::class,
             'cache.store' => \Illuminate\Cache\Repository::class,
             'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
             'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -1207,12 +1202,9 @@ namespace PHPSTORM_META {
             'view' => \Illuminate\View\Factory::class,
             'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
             'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ])
-    );
-    override(
-        \App::make(0),
-        map([
-            '' => '@',
+        ]));
+    override(\App::make(0), map([
+        '' => '@',
             'Fruitcake\Cors\CorsService' => \Fruitcake\Cors\CorsService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
@@ -1337,6 +1329,7 @@ namespace PHPSTORM_META {
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+            'NunoMaduro\PhpInsights\Domain\Contracts\Repositories\FilesRepository' => \NunoMaduro\PhpInsights\Infrastructure\Repositories\LocalFilesRepository::class,
             'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
             'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
             'Sentry\ClientBuilderInterface' => \Sentry\ClientBuilder::class,
@@ -1361,6 +1354,7 @@ namespace PHPSTORM_META {
             'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
             'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
             'cache' => \Illuminate\Cache\CacheManager::class,
+            'cache.psr6' => \Symfony\Component\Cache\Adapter\Psr16Adapter::class,
             'cache.store' => \Illuminate\Cache\Repository::class,
             'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
             'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -1407,12 +1401,9 @@ namespace PHPSTORM_META {
             'view' => \Illuminate\View\Factory::class,
             'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
             'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ])
-    );
-    override(
-        \App::makeWith(0),
-        map([
-            '' => '@',
+        ]));
+    override(\App::makeWith(0), map([
+        '' => '@',
             'Fruitcake\Cors\CorsService' => \Fruitcake\Cors\CorsService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
@@ -1537,6 +1528,7 @@ namespace PHPSTORM_META {
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+            'NunoMaduro\PhpInsights\Domain\Contracts\Repositories\FilesRepository' => \NunoMaduro\PhpInsights\Infrastructure\Repositories\LocalFilesRepository::class,
             'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
             'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
             'Sentry\ClientBuilderInterface' => \Sentry\ClientBuilder::class,
@@ -1561,6 +1553,7 @@ namespace PHPSTORM_META {
             'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
             'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
             'cache' => \Illuminate\Cache\CacheManager::class,
+            'cache.psr6' => \Symfony\Component\Cache\Adapter\Psr16Adapter::class,
             'cache.store' => \Illuminate\Cache\Repository::class,
             'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
             'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -1607,12 +1600,9 @@ namespace PHPSTORM_META {
             'view' => \Illuminate\View\Factory::class,
             'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
             'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ])
-    );
-    override(
-        \app(0),
-        map([
-            '' => '@',
+        ]));
+    override(\app(0), map([
+        '' => '@',
             'Fruitcake\Cors\CorsService' => \Fruitcake\Cors\CorsService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
@@ -1737,6 +1727,7 @@ namespace PHPSTORM_META {
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+            'NunoMaduro\PhpInsights\Domain\Contracts\Repositories\FilesRepository' => \NunoMaduro\PhpInsights\Infrastructure\Repositories\LocalFilesRepository::class,
             'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
             'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
             'Sentry\ClientBuilderInterface' => \Sentry\ClientBuilder::class,
@@ -1761,6 +1752,7 @@ namespace PHPSTORM_META {
             'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
             'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
             'cache' => \Illuminate\Cache\CacheManager::class,
+            'cache.psr6' => \Symfony\Component\Cache\Adapter\Psr16Adapter::class,
             'cache.store' => \Illuminate\Cache\Repository::class,
             'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
             'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -1807,12 +1799,9 @@ namespace PHPSTORM_META {
             'view' => \Illuminate\View\Factory::class,
             'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
             'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ])
-    );
-    override(
-        \resolve(0),
-        map([
-            '' => '@',
+        ]));
+    override(\resolve(0), map([
+        '' => '@',
             'Fruitcake\Cors\CorsService' => \Fruitcake\Cors\CorsService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
@@ -1937,6 +1926,7 @@ namespace PHPSTORM_META {
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+            'NunoMaduro\PhpInsights\Domain\Contracts\Repositories\FilesRepository' => \NunoMaduro\PhpInsights\Infrastructure\Repositories\LocalFilesRepository::class,
             'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
             'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
             'Sentry\ClientBuilderInterface' => \Sentry\ClientBuilder::class,
@@ -1961,6 +1951,7 @@ namespace PHPSTORM_META {
             'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
             'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
             'cache' => \Illuminate\Cache\CacheManager::class,
+            'cache.psr6' => \Symfony\Component\Cache\Adapter\Psr16Adapter::class,
             'cache.store' => \Illuminate\Cache\Repository::class,
             'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
             'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -2007,12 +1998,9 @@ namespace PHPSTORM_META {
             'view' => \Illuminate\View\Factory::class,
             'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
             'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ])
-    );
-    override(
-        \Psr\Container\ContainerInterface::get(0),
-        map([
-            '' => '@',
+        ]));
+    override(\Psr\Container\ContainerInterface::get(0), map([
+        '' => '@',
             'Fruitcake\Cors\CorsService' => \Fruitcake\Cors\CorsService::class,
             'Illuminate\Auth\Console\ClearResetsCommand' => \Illuminate\Auth\Console\ClearResetsCommand::class,
             'Illuminate\Auth\Middleware\RequirePassword' => \Illuminate\Auth\Middleware\RequirePassword::class,
@@ -2137,6 +2125,7 @@ namespace PHPSTORM_META {
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
             'Illuminate\Testing\ParallelTesting' => \Illuminate\Testing\ParallelTesting::class,
             'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+            'NunoMaduro\PhpInsights\Domain\Contracts\Repositories\FilesRepository' => \NunoMaduro\PhpInsights\Infrastructure\Repositories\LocalFilesRepository::class,
             'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
             'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
             'Sentry\ClientBuilderInterface' => \Sentry\ClientBuilder::class,
@@ -2161,6 +2150,7 @@ namespace PHPSTORM_META {
             'auth.password.broker' => \Illuminate\Auth\Passwords\PasswordBroker::class,
             'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
             'cache' => \Illuminate\Cache\CacheManager::class,
+            'cache.psr6' => \Symfony\Component\Cache\Adapter\Psr16Adapter::class,
             'cache.store' => \Illuminate\Cache\Repository::class,
             'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
             'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
@@ -2207,8 +2197,7 @@ namespace PHPSTORM_META {
             'view' => \Illuminate\View\Factory::class,
             'view.engine.resolver' => \Illuminate\View\Engines\EngineResolver::class,
             'view.finder' => \Illuminate\View\FileViewFinder::class,
-        ])
-    );
+        ]));
 
 
     override(\Illuminate\Support\Arr::add(0), type(0));
@@ -2241,4 +2230,5 @@ namespace PHPSTORM_META {
     override(\with(0), type(0));
     override(\tap(0), type(0));
     override(\optional(0), type(0));
+
 }

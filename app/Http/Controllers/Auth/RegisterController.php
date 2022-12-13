@@ -47,7 +47,7 @@ class RegisterController extends Controller
         $pageConfigs = ['bodyCustomClass' => 'register-bg', 'isCustomizer' => false];
 
         return view('/auth/register', [
-            'pageConfigs' => $pageConfigs
+            'pageConfigs' => $pageConfigs,
         ]);
     }
 

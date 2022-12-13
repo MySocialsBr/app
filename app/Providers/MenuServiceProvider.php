@@ -13,7 +13,6 @@ class MenuServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
     }
 
     /**
@@ -25,9 +24,9 @@ class MenuServiceProvider extends ServiceProvider
     {
         // get all data from menu.json file
         $verticalMenuJson = file_get_contents(base_path('resources/json/verticalMenu.json'));
-        $verticalMenuData = json_decode((string)$verticalMenuJson);
+        $verticalMenuData = json_decode((string) $verticalMenuJson);
         $horizontalMenuJson = file_get_contents(base_path('resources/json/horizontalMenu.json'));
-        $horizontalMenuData = json_decode((string)$horizontalMenuJson);
+        $horizontalMenuData = json_decode((string) $horizontalMenuJson);
 
         // share all menuData to all the views
         \View::share('menuData', [$verticalMenuData, $horizontalMenuData]);

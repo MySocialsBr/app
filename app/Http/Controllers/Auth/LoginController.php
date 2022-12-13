@@ -45,7 +45,7 @@ class LoginController extends Controller
         $pageConfigs = ['bodyCustomClass' => 'login-bg', 'isCustomizer' => false];
 
         return view('/auth/login', [
-            'pageConfigs' => $pageConfigs
+            'pageConfigs' => $pageConfigs,
         ]);
     }
 }
