@@ -135,5 +135,3 @@ return [
     "Child 2" => "Kind 2",
     "Page Collapse" => "Seitenzusammenbruch"
 ];
-
-?>

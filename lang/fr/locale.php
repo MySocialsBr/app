@@ -135,4 +135,3 @@ return [
     "Child 2" => "Enfant 2",
     "Page Collapse" => "Effondrement de la page"
 ];
-?>
