@@ -22,6 +22,7 @@
         "lucascudo/laravel-pt-br-localization": "^1.2",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
+        "nunomaduro/larastan": "^2.0",
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0"
     },
@@ -65,6 +66,9 @@
         ],
         "check-style": [
             "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --config .php-cs-fixer.php --diff --verbose --dry-run --stop-on-violation"
+        ],
+        "phpstan": [
+            "./vendor/bin/phpstan analyse --memory-limit 512M"
         ]
     },
     "extra": {

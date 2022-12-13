@@ -8,7 +8,7 @@ use Config;
 
 class Helpers
 {
-    public static function applClasses()
+    public static function applClasses(): array
     {
         // default data value
         $dataDefault = [
@@ -205,7 +205,7 @@ class Helpers
     }
 
     // updatesPageConfig function override all configuration of custom.php file as page requirements.
-    public static function updatePageConfig($pageConfigs)
+    public static function updatePageConfig(?array $pageConfigs): void
     {
         $demo = 'custom';
         if (isset($pageConfigs)) {

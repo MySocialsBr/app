@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\View\View;
+
 class PageController extends Controller
 {
-    public function blankPage()
+    public function blankPage(): View
     {
         $breadcrumbs = [
             ['link' => "/", 'name' => "Home"],
@@ -16,7 +18,7 @@ class PageController extends Controller
         return view('pages.page-blank', ['pageConfigs' => $pageConfigs], ['breadcrumbs' => $breadcrumbs]);
     }
 
-    public function collapsePage()
+    public function collapsePage(): View
     {
         $breadcrumbs = [
             ['link' => "/", 'name' => "Home"],
