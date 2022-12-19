@@ -10,14 +10,16 @@ class LocaleMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
     {
         // available language in template array
         $availLocale = [
+            'pt-BR' => 'pt-BR',
             'en' => 'en',
             'fr' => 'fr',
             'de' => 'de',
